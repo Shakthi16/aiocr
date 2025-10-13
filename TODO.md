@@ -1,0 +1,5 @@
+- [ ] Edit vite.config.ts to remove lovable-tagger import and usage
+- [ ] Edit package.json to remove lovable-tagger dependency
+- [ ] Edit index.html to remove or change meta tags mentioning Lovable
+- [ ] Run npm install to update package-lock.json
+- [ ] Rebuild the project to update dist/index.html

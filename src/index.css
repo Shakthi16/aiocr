@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Deep slate dark theme - AI Dashboard aesthetic */
+    --background: 222 47% 5%;
+    --foreground: 210 40% 98%;
+
+    /* Glassmorphic cards */
+    --card: 217 33% 12%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 217 33% 12%;
+    --popover-foreground: 210 40% 98%;
+
+    /* Cyan AI accent */
+    --primary: 199 89% 48%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 199 89% 48%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 199 89% 48%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens for AI theme */
+    --gradient-start: 222 47% 5%;
+    --gradient-end: 217 33% 10%;
+    --glow: 199 89% 48%;
+    --success: 142 71% 45%;
+    --warning: 38 92% 50%;
+    
+    /* Sidebar */
+    --sidebar-background: 217 33% 10%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 199 89% 48%;
+    --sidebar-primary-foreground: 210 40% 98%;
+    --sidebar-accent: 217 33% 17%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217 33% 17%;
+    --sidebar-ring: 199 89% 48%;
+  }
+}
+
+@layer utilities {
+  /* Glassmorphism effect */
+  .glass {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  /* Glow effects for AI accent */
+  .glow {
+    box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+  }
+  
+  .glow-strong {
+    box-shadow: 0 0 30px rgba(56, 189, 248, 0.5), 0 0 60px rgba(56, 189, 248, 0.2);
+  }
+  
+  /* Gradient backgrounds */
+  .bg-gradient-dark {
+    background: linear-gradient(135deg, hsl(var(--gradient-start)), hsl(var(--gradient-end)));
+  }
+  
+  .bg-gradient-primary {
+    background: linear-gradient(135deg, hsl(var(--primary)), hsl(199 89% 60%));
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-gradient-dark text-foreground antialiased;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-muted/20;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary/40 rounded-full;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary/60;
+  }
+}
